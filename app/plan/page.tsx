@@ -35,7 +35,7 @@ export default function PlanPage() {
           <div className="grid lg:grid-cols-[34%_66%]">
 
             {/* LEFT SIDE */}
-            <div className="flex min-h-[650px] flex-col justify-between bg-primary p-8 text-primary-foreground md:p-10">
+            <div className="flex min-h-[40rem] flex-col justify-between bg-primary p-8 text-primary-foreground md:p-10">
 
               <div>
                 <h1 className="text-3xl font-bold">

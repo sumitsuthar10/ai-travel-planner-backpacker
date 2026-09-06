@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Provider from "./provider";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,7 +39,9 @@ export default function RootLayout({
         )}
       >
         <body className="min-h-full flex flex-col">
-          <Provider>{children}</Provider>
+          <ConvexClientProvider>
+            {children}
+          </ConvexClientProvider>
         </body>
       </html>
     </ClerkProvider>
