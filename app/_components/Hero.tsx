@@ -1,9 +1,11 @@
 "use client";
 
+import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState } from "react";
 
 function Hero() {
+  const { user } = useUser();
     const [authOpen, setAuthOpen] = useState(false);
   return (
     <section className="relative overflow-hidden">
