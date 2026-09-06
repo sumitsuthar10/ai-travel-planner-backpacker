@@ -1,11 +1,24 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+
+import Hero from "./_components/Hero";
+import Destinations from "./_components/Destinations";
+import Features from "./_components/features";
+import HowItWorks from "./_components/how-it-works";
+import Footer from "./_components/footer";
 
 export default function Home() {
   return (
- <div>  
-  <h1>Sumit Kumar</h1>
-  <Button>Click Me</Button>
- </div>
+    <main>
+
+      <Hero />
+
+      <Destinations />
+
+      <Features />
+
+      <HowItWorks />
+
+      <Footer />
+
+    </main>
   );
 }
