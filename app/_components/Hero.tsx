@@ -1,12 +1,15 @@
 "use client";
 
-import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { useState } from "react";
 
 function Hero() {
-  const { user } = useUser();
-    const [authOpen, setAuthOpen] = useState(false);
+  const handleExploreDestinations = () => {
+    document.getElementById("destinations")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto flex min-h-[calc(100vh-64px)] max-w-7xl items-center px-6 py-20">
@@ -49,18 +52,13 @@ function Hero() {
                 Start Planning ✨
               </Link>
 
-       <button
-        type="button"
-        onClick={() => {
-            document.getElementById("destinations")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-        }}
-        className="rounded-xl border px-6 py-3 font-semibold transition hover:bg-muted"
-        >
-        Explore Destinations
-        </button>
+              <button
+                type="button"
+                onClick={handleExploreDestinations}
+                className="rounded-xl border px-6 py-3 font-semibold transition hover:bg-muted"
+              >
+                Explore Destinations
+              </button>
 
             </div>
 
@@ -141,9 +139,12 @@ function Hero() {
                     </p>
                   </div>
 
-                  <div className="rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground">
+                  <Link
+                    href="/plan?destination=Manali"
+                    className="inline-flex rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+                  >
                     View Trip
-                  </div>
+                  </Link>
                 </div>
 
               </div>

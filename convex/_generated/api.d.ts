@@ -9,6 +9,7 @@
  */
 
 import type * as Schema from "../Schema.js";
+import type * as tripDetails from "../tripDetails.js";
 import type * as user from "../user.js";
 
 import type {
@@ -19,6 +20,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   Schema: typeof Schema;
+  tripDetails: typeof tripDetails;
   user: typeof user;
 }>;
 

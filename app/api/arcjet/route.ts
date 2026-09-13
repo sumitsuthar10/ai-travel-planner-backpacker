@@ -8,8 +8,8 @@ const aj = arcjet({
     tokenBucket({
       mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
       characteristics: ["userId"], // track requests by a custom user ID
-      refillRate: 5, // refill 5 tokens per interval
-      interval: 86400, // refill every 10 seconds
+      refillRate: 10, // refill 10 credits per day
+      interval: "1d",
       capacity: 10, // bucket maximum capacity of 10 tokens
     }),
   ],
@@ -17,12 +17,12 @@ const aj = arcjet({
 
 export async function GET(req: Request) {
   const userId = "user123"; // Replace with your authenticated user ID
-  const decision = await aj.protect(req, { userId, requested: 5 }); // Deduct 5 tokens from the bucket
+  const decision = await aj.protect(req, { userId, requested: 1 }); // Deduct 1 credit from the bucket
   console.log("Arcjet decision", decision);
 
   if (decision.isDenied()) {
     return NextResponse.json(
-      { error: "Too Many Requests", reason: decision.reason },
+      { error: "No credits left", resp: "No credits left", ui: "limit" },
       { status: 429 },
     );
   }

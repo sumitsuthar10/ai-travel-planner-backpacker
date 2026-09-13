@@ -131,21 +131,27 @@ export default function Footer() {
 
           <div className="flex gap-5">
             <Link
-              href="#"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
               className="transition hover:text-foreground"
             >
               Instagram
             </Link>
 
             <Link
-              href="#"
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
               className="transition hover:text-foreground"
             >
               GitHub
             </Link>
 
             <Link
-              href="#"
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
               className="transition hover:text-foreground"
             >
               LinkedIn

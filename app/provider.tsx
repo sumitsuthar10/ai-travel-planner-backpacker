@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./_components/header";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { useUser } from "@clerk/nextjs";
-import { UserDetailContext } from "@/context/UserDetailContext";
+import { UserDetail, UserDetailContext } from "@/context/UserDetailContext";
 
 function Provider({
   children,
@@ -14,7 +14,7 @@ function Provider({
 }>) {
   const createUser = useMutation(api.user.CreateNewUser);
 
-  const [userDetail, setUserDetail] = useState<any>(null);
+  const [userDetail, setUserDetail] = useState<UserDetail | null>(null);
 
   const { user } = useUser();
 
@@ -30,7 +30,7 @@ function Provider({
         name: user.fullName ?? "",
       });
 
-      setUserDetail(result);
+      setUserDetail(result as UserDetail);
     };
 
     saveUser();
@@ -47,7 +47,3 @@ function Provider({
 }
 
 export default Provider;
-
-export const useUserDetail = () => {
-  return useContext(UserDetailContext);
-};

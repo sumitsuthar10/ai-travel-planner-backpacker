@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const destinations = [
   {
@@ -28,6 +31,13 @@ const destinations = [
 ];
 
 export default function Destinations() {
+  const router = useRouter();
+
+  const handlePlanTrip = (destinationName: string) => {
+    const target = `/plan?destination=${encodeURIComponent(destinationName)}`;
+    router.push(target);
+  };
+
   return (
     <section
       id="destinations"
@@ -52,13 +62,6 @@ export default function Destinations() {
             </p>
           </div>
 
-          {/* View All Button */}
-          <button
-            type="button"
-            className="hidden rounded-full border px-5 py-2.5 text-sm font-medium transition hover:bg-primary hover:text-primary-foreground md:block"
-          >
-            View all destinations →
-          </button>
         </div>
 
         {/* Destination Cards */}
@@ -103,10 +106,10 @@ export default function Destinations() {
                   {destination.description}
                 </p>
 
-                {/* Plan Button */}
                 <button
                   type="button"
-                  className="mt-5 w-full rounded-xl bg-primary py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+                  onClick={() => handlePlanTrip(destination.name)}
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-primary py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
                 >
                   Plan this trip →
                 </button>
