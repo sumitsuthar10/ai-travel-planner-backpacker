@@ -55,8 +55,7 @@ function Features() {
 
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
             From finding the perfect destination to planning every
-            detail of your journey, Backpacker helps you travel
-            better with AI.
+            detail of your journey.
           </p>
 
         </div>
