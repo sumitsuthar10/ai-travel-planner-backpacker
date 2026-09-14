@@ -4,6 +4,10 @@ Backpacker is an AI-powered travel planning web app built with Next.js. It helps
 
 The project focuses on making trip planning easier for backpackers and travelers who want quick, practical, and budget-aware recommendations instead of manually researching every place, hotel, route, and activity.
 
+## Live Website
+
+Visit the deployed app here: [https://ai-travel-planner-backpacker.vercel.app/](https://ai-travel-planner-backpacker.vercel.app/)
+
 ## What This Project Does
 
 - Collects trip details through a conversational AI chat interface.
@@ -197,7 +201,9 @@ The app currently supports the main travel planning flow:
 
 ## Deployment
 
-This app can be deployed on Vercel or any platform that supports Next.js. Before deployment, configure all required environment variables in the hosting provider dashboard and connect the Convex, Clerk, OpenRouter, and Arcjet services.
+The live version is deployed on Vercel: [https://ai-travel-planner-backpacker.vercel.app/](https://ai-travel-planner-backpacker.vercel.app/)
+
+This app can also be deployed on Vercel or any platform that supports Next.js. Before deployment, configure all required environment variables in the hosting provider dashboard and connect the Convex, Clerk, OpenRouter, and Arcjet services.
 
 ## Project Name Meaning
 
