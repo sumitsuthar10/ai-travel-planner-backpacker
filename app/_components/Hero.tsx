@@ -37,7 +37,6 @@ function Hero() {
 
             {/* Description */}
             <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-              Plan unforgettable trips with the power of AI.
               Get personalized itineraries, discover hidden gems,
               manage your budget, and travel smarter.
             </p>
